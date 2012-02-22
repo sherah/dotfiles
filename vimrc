@@ -8,10 +8,12 @@ call vundle#rc()
 " required! 
 Bundle 'gmarik/vundle'
 Bundle 'mileszs/ack.vim'
+Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 
@@ -52,8 +54,6 @@ nmap <silent> ,m :bprev<CR>
 nmap <silent> ;' :tabnext<CR>
 nmap <silent> ;l :tabprev<CR>
 
-
-
 " Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4
@@ -62,6 +62,7 @@ highlight SpecialKey guifg=#4a4
 set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
+set smarttab                    " fix <BS> key
 set backspace=indent,eol,start  " backspace through everything in insert mode
 
 "" Searching
