@@ -1,0 +1,20 @@
+[alias]
+  c = commit -m
+  a = add
+  di = diff
+  dic = diff --cached
+  pl = pull
+  ps = push
+  plre = pull --rebase
+  st = status
+  out = log origin..HEAD
+[user]
+	name = tashian
+	email = carl@tashian.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+  editor = /usr/bin/vim
+  excludesfile = ~/.gitignore
