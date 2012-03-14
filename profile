@@ -14,7 +14,11 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
-export NODE_PATH=/usr/local/lib/node_modules
+echo $PATH | grep -q -s "./node_modules/.bin"
+if [ $? -eq 1 ] ; then
+  PATH=$PATH:./node_modules/.bin
+  export PATH
+fi
 
-export LESS="-RS#3NM~gQ"
-
+export LESS="-R#3Nm~gQ"
+export EDITOR="vim"
