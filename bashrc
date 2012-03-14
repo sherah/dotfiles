@@ -1,15 +1,23 @@
-export PS1="$HII\h:$SI\w$NM\$ $IN"
+source ~/.git-completion.bash
 
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
+
+# PGSQL
 alias pgstop='pg_ctl stop -D /usr/local/var/postgres'
 alias pgstart='pg_ctl start -D /usr/local/var/postgres -l /usr/local/var/log/postgresql.log'
+
+# Mongo
 alias mstart='mongod --fork --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
 alias mstop='kill `cat /usr/local/var/log/mongodb/mongod.pid`'
 alias mrepair='mongod --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf --repair'
-alias be='sudo -i -u'
-tweet () { curl --digest -u tashian -d status="$*" -d source="cURL" http://twitter.com/statuses/update.xml; }
 
+# Redis
+alias rstart='redis-server /usr/local/etc/redis.conf'
+
+alias be='sudo -i -u'
 alias og='cd ~/Rails/ourgoods'
+
+# Git stuff
 alias gl='git pull'
 alias gp='git push'
 alias gst='git status'
@@ -19,6 +27,15 @@ alias r='rails'
 alias dh='cd ~/Sites/dreamhost-files'
 alias ls='ls -G'
 alias dhdeploy='ssh carl@tashian.com git pull'
+
+# Parallel versions of gzip and bzip2
+alias gzip='pigz'
+alias bzip2='pbzip2'
+
+# Prevent resource forks from being tarred
+alias tar='COPYFILE_DISABLE=true tar' 
+
+# Go to the source dir for a given bundle or gem
 bundlecd () { cd `bundle show $*`; }
 gemcd () { cd `gem which $*`; }
 
@@ -29,9 +46,7 @@ HI="\[\033[0;37m\]" #change this for letter colors
 HII="\[\033[0;31m\]" #change this for letter colors
 SI="\[\033[0;33m\]" #this is for the current directory
 IN="\[\033[0m\]"
-
-# Prevent resource forks from being tarred
-alias tar='COPYFILE_DISABLE=true tar' 
+PS1="$SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
 
 #I hate noise
 set bell-style visible
@@ -44,3 +59,6 @@ complete -C rails-complete -o default rails
 
 # tmuxinator
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+
+# Node Version Manager
+. ~/.nvm/nvm.sh
