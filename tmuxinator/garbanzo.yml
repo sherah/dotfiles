@@ -7,7 +7,7 @@ tabs:
   - cmd: 
   - editor: vim
   - redis: redis-cli
-  - db: mongo
+  - db: mongo garbanzo_development
   - supervisor: supervisor server.coffee
   - logs:
      layout: main-vertical

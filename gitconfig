@@ -1,5 +1,6 @@
 [alias]
   c = commit -m
+  ci = commit
   a = add
   di = diff
   dic = diff --cached
@@ -8,6 +9,9 @@
   plre = pull --rebase
   st = status
   out = log origin..HEAD
+  br = branch
+  co = checkout
+  lg = log -p
 [user]
 	name = tashian
 	email = carl@tashian.com

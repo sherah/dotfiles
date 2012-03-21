@@ -16,7 +16,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
-
+Bundle 'kchmck/vim-coffee-script'
 
 filetype plugin indent on       " load file type plugins + indentation
 
@@ -27,7 +27,6 @@ colors zenburn
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-
 set number                      " Enable line numbers
 
 "" Show Invisibles
@@ -44,11 +43,13 @@ set listchars=tab:▸\ ,eol:¬
 " (it will prompt for sudo password when writing)
 cmap w!! %!sudo tee > /dev/null %
 
-" Next buffer
-nmap <silent> ,. :bnext<CR>
-
-" Previous buffer
-nmap <silent> ,m :bprev<CR>
+nmap <silent> ,. :bnext<CR>             " Next buffer
+nmap <silent> ,m :bprev<CR>             " Previous buffer
+set visualbell t_vb=                    " Silence bells
+set nostartofline                       " When paging, don't go to the start of the line
+set laststatus=2                        " show status line all the time
+set scrolloff=5                         " don't scroll any closer to top/bottom
+set backspace=2                         " Set for maximum backspace smartness
 
 " Next tab
 nmap <silent> ;' :tabnext<CR>
@@ -59,7 +60,6 @@ highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4
 
 "" Whitespace
-set nowrap                      " don't wrap lines
 set tabstop=2 shiftwidth=2      " a tab is two spaces (or set this to 4)
 set expandtab                   " use spaces, not tabs (optional)
 set smarttab                    " fix <BS> key
@@ -70,3 +70,7 @@ set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
+
+"" Dealing with unsaved buffers
+set hidden                      " Allow unsaved buffers
+set confirm                     " Confirm all unsaved buffers on exit
