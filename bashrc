@@ -61,4 +61,5 @@ complete -C rails-complete -o default rails
 [[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
 
 # Node Version Manager
-. ~/.nvm/nvm.sh
+[[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
+

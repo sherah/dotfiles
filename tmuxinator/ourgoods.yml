@@ -4,8 +4,8 @@
 project_name: ourgoods
 project_root: ~/code/ourgoods
 rvm: 1.9.3
-pre: mysql.server restart
-post: mysql.server stop
+pre: mysql.server restart && /usr/local/bin/memcached -d
+post: mysql.server stop && killall memcached
 tabs:
   - editor: vim
   - logs:
@@ -14,7 +14,7 @@ tabs:
         - tail -f log/development.log
         - #empty
         - top
-  - lserver: rails s
   - console: rails c
   - db: rails db
   - server: ssh cappy@app.ourgoods.org
+  - lserver: rails s

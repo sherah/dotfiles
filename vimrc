@@ -17,12 +17,16 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'jpalardy/vim-slime'
 
 filetype plugin indent on       " load file type plugins + indentation
 
 " http://slinky.imukuppi.org/zenburnpage/
 let g:zenburn_high_Contrast = 1
 colors zenburn
+
+" Slime plugin config
+let g:slime_target = "tmux"
 
 syntax enable
 set encoding=utf-8
