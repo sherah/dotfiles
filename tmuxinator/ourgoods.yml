@@ -4,8 +4,7 @@
 project_name: ourgoods
 project_root: ~/code/ourgoods
 rvm: 1.9.3
-pre: mysql.server restart && /usr/local/bin/memcached -d
-post: mysql.server stop && killall memcached
+pre: mysql.server restart && kilall memcached ; /usr/local/bin/memcached -d
 tabs:
   - editor: vim
   - logs:
