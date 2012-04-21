@@ -4,16 +4,19 @@
 project_name: ourgoods
 project_root: ~/code/ourgoods
 rvm: 1.9.3
-pre: mysql.server restart && kilall memcached ; /usr/local/bin/memcached -d
 tabs:
   - editor: vim
+  - console:
+      layout: main-vertical
+      panes:
+        - rails c
+        - # empty
+  - db: rails db
   - logs:
       layout: main-vertical
       panes:
         - tail -f log/development.log
-        - #empty
+        - mysql.server restart && killall memcached ; /usr/local/bin/memcached -d; rake ts:restart
         - top
-  - console: rails c
-  - db: rails db
   - server: ssh cappy@app.ourgoods.org
   - lserver: rails s
