@@ -26,6 +26,7 @@ alias gph='git push heroku'
 alias r='rails'
 alias dh='cd ~/Sites/dreamhost-files'
 alias ls='ls -G'
+alias more='less'
 alias dhdeploy='ssh carl@tashian.com git pull'
 
 # Parallel versions of gzip and bzip2
@@ -34,6 +35,10 @@ alias bzip2='pbzip2'
 
 # Prevent resource forks from being tarred
 alias tar='COPYFILE_DISABLE=true tar' 
+
+# Use my vim
+alias vi='/usr/local/bin/vim'
+alias vim='/usr/local/bin/vim'
 
 # Go to the source dir for a given bundle or gem
 bundlecd () { cd `bundle show $*`; }
