@@ -26,6 +26,7 @@ alias gph='git push heroku'
 alias r='rails'
 alias dh='cd ~/Sites/dreamhost-files'
 alias ls='ls -G'
+# Less is more
 alias more='less'
 alias dhdeploy='ssh carl@tashian.com git pull'
 
