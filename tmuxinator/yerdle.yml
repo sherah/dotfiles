@@ -1,0 +1,20 @@
+# ~/.tmuxinator/ourgoods.yml
+# you can make as many tabs as you wish...
+
+project_name: yerdle
+project_root: ~/code/yerdle
+rvm: 1.9.3
+tabs:
+  - editor: vim
+  - console:
+      layout: main-vertical
+      panes:
+        - rails c
+        - # empty
+  - db: mongo yerdle_development
+  - logs:
+      layout: main-vertical
+      panes:
+        - tail -f log/development.log | grep -v delayed_backend_mongoid_jobs
+        - top
+  - lserver: ./start_foreman
