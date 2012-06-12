@@ -40,7 +40,7 @@ nmap <leader>f :Ack
 nmap <leader>n :NERDTreeToggle<CR>
 
 " Use the same symbols as TextMate for tabstops and EOLs
-set listchars=tab:▸\ ,eol:¬
+" set listchars=tab:▸\ ,eol:¬
 
 " Some keyboard mappings from Janus
 " use :w!! to write to a file using sudo if you forgot to 'sudo vim file'
