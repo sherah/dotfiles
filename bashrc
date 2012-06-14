@@ -69,3 +69,6 @@ complete -C rails-complete -o default rails
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
 
+# ZZZZZZZZZZZ
+. $HOME/dotfiles/z/z.sh
+
