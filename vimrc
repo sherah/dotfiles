@@ -52,6 +52,13 @@ nmap <silent> ,m :bprev<CR>             " Previous buffer
 set visualbell t_vb=                    " Silence bells
 set nostartofline                       " When paging, don't go to the start of the line
 set laststatus=2                        " show status line all the time
+set statusline=
+set statusline+=%<\                       " cut at start
+set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
+set statusline+=%-40f\                    " path
+set statusline+=%=%1*%y%*%*\              " file type
+set statusline+=%10((%l,%c)%)\            " line and column
+set statusline+=%P                        " percentage of file
 set scrolloff=5                         " don't scroll any closer to top/bottom
 set backspace=2                         " Set for maximum backspace smartness
 

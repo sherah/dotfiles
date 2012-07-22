@@ -7,14 +7,18 @@ rvm: 1.9.3
 tabs:
   - editor: vim
   - console:
-      layout: main-vertical
+      layout: even-vertical
       panes:
         - rails c
         - # empty
   - db: mongo yerdle_development
   - logs:
-      layout: main-vertical
+      layout: even-horizontal
       panes:
-        - tail -f log/development.log | grep -v delayed_backend_mongoid_jobs
-        - top
-  - lserver: ./start_foreman
+        - tail -f log/development.log | grep -v --line-buffered delayed_backend_mongoid_jobs
+        - tail -f /usr/local/var/log/mongodb/mongodb.log
+  - lservers:
+      layout: main-horizontal
+      panes:
+        - ./start_foreman
+        - bundle exec guard -i
