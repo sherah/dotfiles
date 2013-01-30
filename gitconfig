@@ -3,6 +3,7 @@
   ci = commit
   a = add
   di = diff
+  del = branch -d
   dic = diff --cached
   pl = pull
   ps = push
@@ -11,7 +12,12 @@
   out = log origin..HEAD
   br = branch
   co = checkout
+	new = checkout -b
   lg = log -p
+  mvbr = branch -m
+	com = commit
+	acom = commit --amend
+ 	up = pull
 	switch = !legit switch \"$@\"
 	branches = !legit branches
 	sprout = !legit sprout \"$@\"
@@ -30,3 +36,5 @@
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore
+[push]
+	default = matching

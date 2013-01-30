@@ -7,9 +7,13 @@ alias pgstop='pg_ctl stop -D /usr/local/var/postgres'
 alias pgstart='pg_ctl start -D /usr/local/var/postgres -l /usr/local/var/log/postgresql.log'
 
 # Mongo
-alias mstart='mongod --fork --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
+alias mstart='mongod --fork --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
 alias mstop='kill `cat /usr/local/var/log/mongodb/mongod.pid`'
-alias mrepair='mongod --config /usr/local/Cellar/mongodb/1.8.1-x86_64/mongod.conf --repair'
+alias mrepair='mongod --repair'
+
+# ElasticSearch
+alias esstart='elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.11/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid > /dev/null &'
+alias esstop='kill `cat /usr/local/var/log/elasticsearch/elasticsearch.pid`'
 
 # Redis
 alias rstart='redis-server /usr/local/etc/redis.conf'
@@ -23,6 +27,7 @@ alias gp='git push'
 alias gst='git status'
 alias gct='git commit'
 alias gph='git push heroku'
+alias stage='git push staging dev:master'
 alias r='rails'
 alias dh='cd ~/Sites/dreamhost-files'
 alias ls='ls -G'

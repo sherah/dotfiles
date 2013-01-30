@@ -16,6 +16,8 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'myusuf3/numbers.vim'
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'jpalardy/vim-slime'
 
@@ -31,13 +33,16 @@ let g:slime_target = "tmux"
 syntax enable
 set encoding=utf-8
 set showcmd                     " display incomplete commands
-set number                      " Enable line numbers
+"set number                       Enable line numbers
 
 "" Show Invisibles
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
 nmap <leader>f :Ack 
 nmap <leader>n :NERDTreeToggle<CR>
+
+" Powerline font
+let g:Powerline_symbols = 'fancy'
 
 " Use the same symbols as TextMate for tabstops and EOLs
 " set listchars=tab:▸\ ,eol:¬

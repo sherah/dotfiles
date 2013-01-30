@@ -14,9 +14,9 @@ if [ $? -eq 1 ] ; then
     export PATH
 fi
 
-echo $PATH | grep -q -s "./node_modules/.bin"
+echo $PATH | grep -q -s "/usr/local/share/npm/bin"
 if [ $? -eq 1 ] ; then
-  PATH=$PATH:./node_modules/.bin
+  PATH=$PATH:/usr/local/share/npm/bin
   export PATH
 fi
 

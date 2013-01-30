@@ -3,7 +3,7 @@
 
 project_name: yerdle
 project_root: ~/code/yerdle
-rvm: 1.9.3
+rvm: 1.9.3-railsexpress
 tabs:
   - editor: vim
   - console:
