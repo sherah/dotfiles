@@ -16,6 +16,7 @@ tabs:
       panes:
         - ./start_foreman
         - bundle exec guard -i
+        - rstart
   - logs:
       layout: even-horizontal
       panes:
