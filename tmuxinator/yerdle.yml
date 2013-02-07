@@ -10,15 +10,15 @@ tabs:
       layout: even-vertical
       panes:
         - rails c
-        - # empty
-  - db: mongo yerdle_development
-  - logs:
-      layout: even-horizontal
-      panes:
-        - tail -f log/development.log | grep -v --line-buffered delayed_backend_mongoid_jobs
-        - tail -f /usr/local/var/log/mongodb/mongodb.log
+        - mongo yerdle_development
   - lservers:
       layout: main-horizontal
       panes:
         - ./start_foreman
         - bundle exec guard -i
+  - logs:
+      layout: even-horizontal
+      panes:
+        - tail -f log/development.log | grep -v --line-buffered delayed_backend_mongoid_jobs
+        - tail -f /usr/local/var/log/mongodb/mongodb.log
+
