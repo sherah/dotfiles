@@ -8,11 +8,13 @@ alias pgstart='pg_ctl start -D /usr/local/var/postgres -l /usr/local/var/log/pos
 
 # Mongo
 alias mstart='mongod --fork --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
+alias mstarti='mongod --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
 alias mstop='kill `cat /usr/local/var/log/mongodb/mongod.pid`'
 alias mrepair='mongod --repair'
 
 # ElasticSearch
 alias esstart='elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.11/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid > /dev/null &'
+alias esstarti='elasticsearch -D es.config=/usr/local/Cellar/elasticsearch/0.19.11/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid'
 alias esstop='kill `cat /usr/local/var/log/elasticsearch/elasticsearch.pid`'
 
 # Redis

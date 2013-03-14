@@ -19,6 +19,10 @@ Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
+Bundle 'airblade/vim-gitgutter'
+
+" Fix gitgutter column
+highlight clear SignColumn
 Bundle 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
 
@@ -58,6 +62,7 @@ colors zenburn
 " nmap <leader>l :set list!<CR>
 " Use the same symbols as TextMate for tabstops and EOLs
 set listchars=tab:▸\ ,eol:¬
+
 
 syntax enable
 set encoding=utf-8
