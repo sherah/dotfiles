@@ -41,10 +41,11 @@ let g:slime_target = "tmux"
 
 Bundle 'rson/vim-conque'
 
-Bundle 'skwp/vim-ruby-conque'
+Bundle 'yerdle/vim-ruby-conque'
+" Bundle 'skwp/vim-ruby-conque'
 
 " Pass --drb option to ruby conque
-let g:ruby_conque_rspec_runner = "rspec --drb"
+let g:ruby_conque_rspec_runner = "zeus test"
 " Cmd-Shift-R for RSpec
 nmap <silent> <leader>r :call RunRspecCurrentFileConque()<CR>
 " " Cmd-Shift-L for RSpec Current Line

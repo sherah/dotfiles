@@ -15,7 +15,7 @@ tabs:
       layout: main-horizontal
       panes:
         - ./start_foreman
-        - bundle exec guard -i
+        - zeus start
         - rstart
         - esstarti
         - mstarti
