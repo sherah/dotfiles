@@ -3,7 +3,7 @@ source ~/.git-completion.bash
 alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
 
 # PGSQL
-alias pgstop='pg_ctl stop -D /usr/local/var/postgres'
+alias pgstop='pg_ctl stop -D /usr/local/var/postgres -m fast'
 alias pgstart='pg_ctl start -D /usr/local/var/postgres -l /usr/local/var/log/postgresql.log'
 
 # Mongo
@@ -13,8 +13,8 @@ alias mstop='kill `cat /usr/local/var/log/mongodb/mongod.pid`'
 alias mrepair='mongod --repair'
 
 # ElasticSearch
-alias esstart='elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.19.11/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid > /dev/null &'
-alias esstarti='elasticsearch -D es.config=/usr/local/Cellar/elasticsearch/0.19.11/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid'
+alias esstart='elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.20.5/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid > /dev/null &'
+alias esstarti='elasticsearch -D es.config=/usr/local/Cellar/elasticsearch/0.20.5/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid'
 alias esstop='kill `cat /usr/local/var/log/elasticsearch/elasticsearch.pid`'
 
 # Redis
@@ -64,14 +64,17 @@ PS1="$SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
 #I hate noise
 set bell-style visible
 
+# Rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Tab completion in rails shell
 complete -C rails-complete -o default rails
 
-# Ruby Version Manager
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+# Teamocil
+complete -W "$(teamocil --list)" teamocil
 
-# tmuxinator
-[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
+# Ruby Version Manager
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh

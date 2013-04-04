@@ -4,13 +4,13 @@
 ##
 echo $PATH | grep -q -s "/usr/local/bin"
 if [ $? -eq 1 ] ; then
-    PATH=$PATH:/usr/local/bin
+    PATH=/usr/local/bin:$PATH
     export PATH
 fi
 
 echo $PATH | grep -q -s "/usr/local/sbin"
 if [ $? -eq 1 ] ; then
-    PATH=$PATH:/usr/local/sbin
+    PATH=/usr/local/sbin:$PATH
     export PATH
 fi
 
