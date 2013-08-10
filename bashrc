@@ -71,10 +71,10 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 complete -C rails-complete -o default rails
 
 # Teamocil
-complete -W "$(teamocil --list)" teamocil
+# complete -W "$(teamocil --list)" teamocil
 
 # Ruby Version Manager
-# [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
@@ -82,3 +82,6 @@ complete -W "$(teamocil --list)" teamocil
 # ZZZZZZZZZZZ
 . $HOME/dotfiles/z/z.sh
 
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/bin:/usr/local/heroku/bin:$PATH"
