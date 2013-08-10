@@ -21,6 +21,9 @@ Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-fugitive'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'peeinears/vim-tomorrow-night-dark'
+Bundle 'chriskempson/vim-tomorrow-theme'
+Bundle 'tpope/vim-vividchalk'
 
 " Fix gitgutter column
 highlight clear SignColumn
@@ -58,7 +61,7 @@ filetype plugin indent on       " load file type plugins + indentation
 
 " http://slinky.imukuppi.org/zenburnpage/
 let g:zenburn_high_Contrast = 1
-colors zenburn
+colors vividchalk 
 
 "" Show Invisibles
 " nmap <leader>l :set list!<CR>
@@ -140,4 +143,6 @@ cmap w!! %!sudo tee > /dev/null %
 nmap <silent> <leader>. :bnext<CR>             " Next buffer
 nmap <silent> <leader>m :bprev<CR>             " Previous buffer
 
-
+hi CursorLine   cterm=NONE ctermbg=235
+hi CursorColumn cterm=NONE ctermbg=235
+nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
