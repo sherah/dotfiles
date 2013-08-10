@@ -25,4 +25,3 @@ export LESS="-R#3m~gQ"
 export EDITOR="/usr/local/bin/vim"
 
 export PATH=/usr/local/share/python:/usr/local/heroku/bin:/Users/sherah/.rvm/gems/ruby-1.9.3-p374-railsexpress/bin:/Users/sherah/.rvm/gems/ruby-1.9.3-p374-railsexpress@global/bin:/Users/sherah/.rvm/rubies/ruby-1.9.3-p374-railsexpress/bin:/Users/sherah/.rvm/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/local/share/npm/bin
-

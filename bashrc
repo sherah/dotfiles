@@ -79,9 +79,8 @@ complete -C rails-complete -o default rails
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
 
-# ZZZZZZZZZZZ
-. $HOME/dotfiles/z/z.sh
-
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/bin:/usr/local/heroku/bin:$PATH"
+
+### Add our custom aliases
+source $HOME/.aliases

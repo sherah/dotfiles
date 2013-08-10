@@ -12,9 +12,6 @@ alias rvmrc-create='rvm --rvmrc --create'
 alias rvmrc-reload='. ./.rvmrc'
 alias curvm='rvm info | grep GEM_HOME:'
 
-#common directories
-alias -g dot='~/.dotfiles'
-
 # git
 alias gl='git pull'
 alias gp='git push'
@@ -37,9 +34,6 @@ alias gppm='git push production master'
 alias gpa='git push &&'
 alias glately='git diff "@{yesterday}" | wc -c'
 
-# grep
-alias -g pg='| grep '
-
 # rails
 alias rc='rails console'
 alias rg='rails generate'
@@ -59,25 +53,15 @@ alias recuc='touch features/support/env.rb'
 alias guard='guard' #weird zsh autocorrect issue
 alias rake='noglob rake' #prevent rake foo[my_param] zsh issue
 
-alias -g vl="vi ./.localrc"
-
 # alias vi to vim
 alias vi=vim
 
-# tmux
-alias -g tcfg='~/.tmux.conf'
-alias -g dmux='~/.tmuxinator'
-
 # commands starting with % for pasting from web
 alias %=' '
-alias $=' ' #and from bash
 
 # processes
-alias -g paux="ps -ef"
-alias -g psgr="ps -ef | grep"
-
-# project specific shells
-alias -g prc="./.projectrc"
+alias paux="ps -ef"
+alias psgr="ps -ef | grep"
 
 # mongodb
 alias ms='mongod --dbpath /tmp/mongo/data/'
