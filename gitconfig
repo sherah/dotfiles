@@ -27,8 +27,8 @@
 	publish = !legit publish \"$@\"
 	graft = !legit graft \"$@\"
 [user]
-	name = tashian
-	email = carl@tashian.com
+	name = sherah
+  email = sherah@sherahsmith.com 
 [color]
 	diff = auto
 	status = auto
@@ -37,4 +37,4 @@
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore
 [push]
-	default = matching
+	default = current
