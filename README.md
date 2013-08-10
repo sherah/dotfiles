@@ -1,3 +1,3 @@
 My dotfiles.
 
-Install with `rake install`.
+Install with `rake install`. Duh.
