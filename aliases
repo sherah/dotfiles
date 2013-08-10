@@ -1,0 +1,110 @@
+# cd
+alias ..='cd ..'
+
+# ls
+alias ls="ls -F"
+alias l="ls"
+alias ll="ls -lah"
+alias la='ls -A'
+
+#rvm
+alias rvmrc-create='rvm --rvmrc --create'
+alias rvmrc-reload='. ./.rvmrc'
+alias curvm='rvm info | grep GEM_HOME:'
+
+#common directories
+alias -g dot='~/.dotfiles'
+
+# git
+alias gl='git pull'
+alias gp='git push'
+alias gd='git diff'
+alias gr='git reset'
+alias gdc='git diff --cached'
+alias gc='git commit'
+alias gcam='git commit --amend'
+alias gco='git checkout'
+alias gb='git branch'
+alias gs='git status'
+alias gaa='git add . && git add . -u && gs'
+alias gaad='git add . && git add . -u && gdc'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gdfstat="git diff-files --stat"
+alias changelog='git log `git log -1 --format=%H -- CHANGELOG*`..; cat CHANGELOG*'
+alias gphm='git push heroku master'
+alias gpdm='git push demo +HEAD:master'
+alias gppm='git push production master'
+alias gpa='git push &&'
+alias glately='git diff "@{yesterday}" | wc -c'
+
+# grep
+alias -g pg='| grep '
+
+# rails
+alias rc='rails console'
+alias rg='rails generate'
+alias dlog='tail -f log/development.log'
+alias hlog='heroku logs --tail'
+alias tlog='tail -f log/test.log'
+alias ttr='touch tmp/restart.txt'
+alias bi='bundle install'
+alias bo='bundle open'
+alias biv='bundle install --path vendor'
+alias be='bundle exec'
+alias berc='bundle exec rails console'
+alias bers='bundle exec rails server'
+alias respork='touch config/application.rb'
+alias rerspec='touch spec/spec_helper.rb'
+alias recuc='touch features/support/env.rb'
+alias guard='guard' #weird zsh autocorrect issue
+alias rake='noglob rake' #prevent rake foo[my_param] zsh issue
+
+alias -g vl="vi ./.localrc"
+
+# alias vi to vim
+alias vi=vim
+
+# tmux
+alias -g tcfg='~/.tmux.conf'
+alias -g dmux='~/.tmuxinator'
+
+# commands starting with % for pasting from web
+alias %=' '
+alias $=' ' #and from bash
+
+# processes
+alias -g paux="ps -ef"
+alias -g psgr="ps -ef | grep"
+
+# project specific shells
+alias -g prc="./.projectrc"
+
+# mongodb
+alias ms='mongod --dbpath /tmp/mongo/data/'
+
+# nginx
+alias ngxstart='sudo launchctl start homebrew.mxcl.nginx'
+alias ngxrestart='ngxstop | ngxstart'
+alias ngxstop='sudo launchctl stop homebrew.mxcl.nginx'
+alias ngxedit='vi /usr/local/etc/nginx/nginx.conf'
+alias ngxlog='tail -f /usr/local/Cellar/nginx/1.2.2/logs/*'
+alias ngxcopy='cp /usr/local/etc/nginx/nginx.conf /Users/dzello/workspace/notes/software/'
+
+# status
+alias st='ps -ef | grep'
+
+# osx
+alias myip='ifconfig | egrep "([0-9]+)\.([0-9]+)\.([0-9]+)\.([0-9]+)"'
+alias lc=launchctl
+
+# python
+alias v='workon'
+alias v.deactivate='deactivate'
+alias v.mk='mkvirtualenv --no-site-packages'
+alias v.mk_withsitepackages='mkvirtualenv'
+alias v.rm='rmvirtualenv'
+alias v.switch='workon'
+alias v.add2virtualenv='add2virtualenv'
+alias v.cdsitepackages='cdsitepackages'
+alias v.cd='cdvirtualenv'
+alias v.lssitepackages='lssitepackages'
