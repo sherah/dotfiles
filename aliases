@@ -54,7 +54,7 @@ alias guard='guard' #weird zsh autocorrect issue
 alias rake='noglob rake' #prevent rake foo[my_param] zsh issue
 
 # alias vi to vim
-alias vi=vim
+alias vi=/Applications/MacVim.app/Contents/MacOS/MacVim
 
 # commands starting with % for pasting from web
 alias %=' '
@@ -92,3 +92,6 @@ alias v.add2virtualenv='add2virtualenv'
 alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
+
+# other apps
+alias subl='open -a "Sublime Text"'

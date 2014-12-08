@@ -1,51 +1,19 @@
 set nocompatible                " choose no compatibility with legacy vi
 filetype off                   " required!
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" Set <leader> key to ,
-let mapleader = ","
-
-" let Vundle manage Vundle
-" required! 
-Bundle 'gmarik/vundle'
-Bundle 'mileszs/ack.vim'
 nmap <leader>f :Ack 
-
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-haml'
-Bundle 'slim-template/vim-slim'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-fugitive'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'peeinears/vim-tomorrow-night-dark'
-Bundle 'chriskempson/vim-tomorrow-theme'
-Bundle 'tpope/vim-vividchalk'
 
 " Fix gitgutter column
 highlight clear SignColumn
-Bundle 'kien/ctrlp.vim'
 nmap <leader>t :CtrlP<CR>
 
-Bundle 'scrooloose/nerdtree'
 nmap <leader>n :NERDTreeToggle<CR>
 
-Bundle 'myusuf3/numbers.vim'
-Bundle 'Lokaltog/vim-powerline'
 " Powerline font
 let g:Powerline_symbols = 'fancy'
 
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'jpalardy/vim-slime'
 " Slime plugin config
 let g:slime_target = "tmux"
-
-Bundle 'rson/vim-conque'
-
-Bundle 'yerdle/vim-ruby-conque'
 " Bundle 'skwp/vim-ruby-conque'
 
 " Pass --drb option to ruby conque
@@ -59,9 +27,6 @@ nmap <silent> <leader><D-R> :call RunLastConqueCommand()<CR>
 
 filetype plugin indent on       " load file type plugins + indentation
 
-" http://slinky.imukuppi.org/zenburnpage/
-let g:zenburn_high_Contrast = 1
-colors vividchalk 
 
 "" Show Invisibles
 " nmap <leader>l :set list!<CR>

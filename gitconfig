@@ -12,29 +12,37 @@
   out = log origin..HEAD
   br = branch
   co = checkout
-	new = checkout -b
+  new = checkout -b
   lg = log -p
   mvbr = branch -m
-	com = commit
-	acom = commit --amend
- 	up = pull
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
+  com = commit
+  acom = commit --amend
+  up = pull
+  switch = !legit switch \"$@\"
+  branches = !legit branches
+  sprout = !legit sprout \"$@\"
+  unpublish = !legit unpublish \"$@\"
+  harvest = !legit harvest \"$@\"
+  sync = !legit sync \"$@\"
+  publish = !legit publish \"$@\"
+  graft = !legit graft \"$@\"
 [user]
-	name = sherah
-  email = sherah@sherahsmith.com 
+  name = Sherah Smith
+  email = ssmith@wikimedia.org
 [color]
-	diff = auto
-	status = auto
-	branch = auto
+  diff = auto
+  status = auto
+  branch = auto
 [core]
   editor = /usr/bin/vim
   excludesfile = ~/.gitignore
 [push]
-	default = current
+  default = current
+[merge]
+  tool = kdiff3
+[mergetool "kdiff3"]
+  cmd = kdiff3 $BASE $LOCAL $REMOTE -o $MERGED
+[url "ssh://gerrit.wikimedia.org:29418/"]
+  insteadOf = https://gerrit.wikimedia.org/r/p/
+[url "ssh://gerrit.wikimedia.org:29418/"]
+  insteadOf = https://gerrit.wikimedia.org/r/

@@ -1,28 +1,5 @@
 source ~/.git-completion.bash
 
-alias grep='GREP_COLOR="1;33" LANG=C grep --color=auto' #use GREP_COLOR=7 to highlight whitespace
-
-# PGSQL
-alias pgstop='pg_ctl stop -D /usr/local/var/postgres -m fast'
-alias pgstart='pg_ctl start -D /usr/local/var/postgres -l /usr/local/var/log/postgresql.log'
-
-# Mongo
-alias mstart='mongod --fork --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
-alias mstarti='mongod --logpath /usr/local/var/log/mongodb/mongodb.log --pidfilepath /usr/local/var/log/mongodb/mongod.pid'
-alias mstop='kill `cat /usr/local/var/log/mongodb/mongod.pid`'
-alias mrepair='mongod --repair'
-
-# ElasticSearch
-alias esstart='elasticsearch -f -D es.config=/usr/local/Cellar/elasticsearch/0.20.5/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid > /dev/null &'
-alias esstarti='elasticsearch -D es.config=/usr/local/Cellar/elasticsearch/0.20.5/config/elasticsearch.yml -p /usr/local/var/log/elasticsearch/elasticsearch.pid'
-alias esstop='kill `cat /usr/local/var/log/elasticsearch/elasticsearch.pid`'
-
-# Redis
-alias rstart='redis-server /usr/local/etc/redis.conf'
-
-alias be='sudo -i -u'
-alias og='cd ~/Rails/ourgoods'
-
 # Git stuff
 alias gl='git pull'
 alias gp='git push'
@@ -30,57 +7,46 @@ alias gst='git status'
 alias gct='git commit'
 alias gph='git push heroku'
 alias stage='git push staging dev:master'
-alias r='rails'
-alias dh='cd ~/Sites/dreamhost-files'
-alias ls='ls -G'
-# Less is more
-alias more='less'
-alias dhdeploy='ssh carl@tashian.com git pull'
-
-# Parallel versions of gzip and bzip2
-alias gzip='pigz'
-alias bzip2='pbzip2'
-
-# Prevent resource forks from being tarred
-alias tar='COPYFILE_DISABLE=true tar' 
 
 # Use my vim
 alias vi='/usr/local/bin/vim'
 alias vim='/usr/local/bin/vim'
 
-# Go to the source dir for a given bundle or gem
-bundlecd () { cd `bundle show $*`; }
-gemcd () { cd `gem which $*`; }
-
-# bright prompt with $HOST:$PWD
-# Terminal colours (after installing GNU coreutils)
-NM="\[\033[0;38m\]" #means no background and white lines
-HI="\[\033[0;37m\]" #change this for letter colors
-HII="\[\033[0;31m\]" #change this for letter colors
-SI="\[\033[0;33m\]" #this is for the current directory
-IN="\[\033[0m\]"
-PS1="$SI\w$NM"'$(__git_ps1 " %s")'"$ $IN"
-
-#I hate noise
-set bell-style visible
-
-# Rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Tab completion in rails shell
-complete -C rails-complete -o default rails
-
-# Teamocil
-# complete -W "$(teamocil --list)" teamocil
-
-# Ruby Version Manager
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
-
 # Node Version Manager
 [[ -s $HOME/.nvm/nvm.sh ]] && source $HOME/.nvm/nvm.sh
 
 ### Added by the Heroku Toolbelt
-export PATH="/usr/local/bin:/usr/local/heroku/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/heroku/bin:$PATH:/Applications/MAMP/Library/bin"
 
-### Add our custom aliases
 source $HOME/.aliases
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+alias failtail='tail -f /Applications/MAMP/logs/php_error.log'
+
+alias subl='open -a "Sublime Text"'
+
+alias omg='node server.js --debug'
+
+alias lolz='npm start'
+
+alias n10='nvm use 0.10'
+alias n8='nvm use 0.8'
+
+# go to fundraising instance
+alias fri='cd ~/workspace/FundraisingInstance/core'
+alias fre='cd ~/workspace/extensions/DonationInterface'
+alias ddb='cd ~/workspace/DataDashboard'
+alias sss='python -m SimpleHTTPServer'
+alias frc='cd ~/workspace/vagrant/mediawiki/extensions/FundraisingChart'
+alias dash='cd ~/workspace/dash'
+alias opendash='subl ~/workspace/dash'
+alias fixssh='ssh-add ~/.ssh/id_rsa'
+alias wow='cd ~/workspace'
+
+extensionSym() {
+	rm -r ~/workspace/FundraisingInstance/core/extensions/ContributionTracking
+	rm -r ~/workspace/FundraisingInstance/core/extensions/DonationInterface
+	rm -r ~/workspace/FundraisingInstance/core/extensions/ParserFunctions
+	rm -r ~/workspace/FundraisingInstance/core/extensions/cldr
+}
